@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'Bonobo';
+    src: url(./assets/Bonobo\ Bold.ttf);
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Bonobo';
+    color: #57361f;
+}
+
+#page-title {
+    font-size: 3rem;
+}
+
+body {
+    background: #f8e7cb;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.bookshelf {
+    width: 600px;
+    padding: 20px;
+    background: #d2a679;
+    border: 8px solid #8b5a2b;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  background-color: #EBCC99;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/Melamine-wood-001.png);
+}
+
+.shelf {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 10px;
+    background: #a0522d;
+    border-top: 6px solid #7b3f00;
+    border-bottom: 6px solid #7b3f00;
+    padding: 15px 15px 0px 15px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+}
+
+.book {
+    width: 50px;
+    height: 120px;
+    background: #3c8dbc;
+    border-radius: 3px;
+    box-shadow: inset -3px 0 rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.book:hover {
+    transform: translateY(-5px);
+}
+
+/* Variations for book colors */
+.red {
+    background: #b22222;
+}
+
+.green {
+    background: #228b22;
+}
+
+.purple {
+    background: #6a5acd;
+}
+
+.orange {
+    background: #ff8c00;
+}
+
+.add-book {
+    background: #f7e5c4;
+    border: 3px solid #e4c69d;
+    border-radius: 10px;
+    min-width: 600px;
+    min-height: 100px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+input {
+    border: 2px solid #e4c69d;
+    border-radius: 5px;
+    min-height: 30px;
+    width: 1fr;
+    background: #f8e7cb;
+    padding: 0 1rem;
+    color: #57361f;
+    margin-top: 0.55rem;
+}
+
+button {
+    min-height: 30px;
+    border: 2px solid #e4c69d;
+    border-radius: 5px;
+    padding: 0.3rem 0.5rem;
+    background: #f3d9b2;
+}

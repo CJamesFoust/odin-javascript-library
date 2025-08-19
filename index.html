@@ -4,10 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./script.js"></script>
-    <script type="module" src="./helpers.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js" type="module"></script>
 </head>
 <body>
-    <div>this is a test on importing modules with JS</div>
+    <div>
+        <h1 id="page-title">BOOK NOOK</h1>
+    </div>
+    <div class="add-book">
+        <form action="" method="post">
+            <legend>Add a book</legend>
+            <div class="inputs">
+                <input type="text" placeholder="Book title" id="title-input" required>
+                <input type="text" placeholder="Book author" id="author-input" required>
+                <input type="text" placeholder="Book pages" id="pages-input"required>
+                <select name="is-read" id="is-read">
+                    <option value="false">Have Not Read</option>
+                    <option value="true">Have Read</option>
+                </select>
+                <div class="button-container"><button id="add-book-btn">Add</button></div>
+            </div>
+        </form>
+    </div>
+    <div class="bookshelf">
+    <div class="shelf read">
+      <div class="book red">Book 1</div>
+      <div class="book green">Book 2</div>
+      <div class="book purple">Book 3</div>
+      <div class="book orange">Book 4</div>
+    </div>
+    <div class="shelf unread">
+      <div class="book">Book 5</div>
+      <div class="book red">Book 6</div>
+      <div class="book green">Book 7</div>
+    </div>
+  </div>
 </body>
 </html>
