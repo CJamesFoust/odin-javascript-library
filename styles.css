@@ -24,6 +24,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 40px;
+    position: relative;
 }
 
 .bookshelf {
@@ -33,8 +34,8 @@ body {
     border: 8px solid #8b5a2b;
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-  background-color: #EBCC99;
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/Melamine-wood-001.png);
+    background-color: #EBCC99;
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/Melamine-wood-001.png);
 }
 
 .shelf {
@@ -108,6 +109,7 @@ input {
     padding: 0 1rem;
     color: #57361f;
     margin-top: 0.55rem;
+    outline: none;
 }
 
 button {
@@ -116,4 +118,131 @@ button {
     border-radius: 5px;
     padding: 0.3rem 0.5rem;
     background: #f3d9b2;
+    min-width: 78px;
+}
+
+button:hover {
+    cursor: pointer;
+    background: #f8dfba;
+}
+
+#is-read {
+    background-color: #f8e7cb;
+    border: 2px solid #e4c69d;
+    border-radius: 5px;
+    min-height: 30px;
+    outline: none;
+}
+
+.lower-inputs {
+    margin-bottom: 0.55rem;
+    display: flex;
+    align-items: flex-end;
+    gap: 0.35rem;
+}
+
+.button-container {
+    margin-top: 1rem;
+}
+
+.shelf {
+    min-height: 141px;
+}
+
+#color-selector {
+    min-width: 60px;
+}
+
+.book-modal {
+    width: 280px;
+    height: 420px;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background: #F33139;
+    border-radius: 20px 16px 12px 32px;
+    background-image: linear-gradient(to right, #54535345 48px, #5a5a5a36 50px, transparent 50px);
+    box-shadow:  2px 6px 40px 0px #F33139
+}
+
+.book-modal:after {
+    content: "";
+    position: absolute;
+    box-sizing: inherit;
+    height: 52px;
+    width: 274px;
+    bottom: 6px;
+    right: 0px;
+    background: white;
+    border-radius: 32px 4px 4px 32px;
+    box-shadow: inset 4px 6px 0px 0px #E4E0CE;
+    background-image: linear-gradient(to bottom, transparent 6px, #E4E0CE 8px, transparent 8px, transparent 12px, #E4E0CE 12px, transparent 14px, transparent 18px, #E4E0CE 18px, transparent 20px, transparent 24px, #E4E0CE 24px, transparent 26px, transparent 30px, #E4E0CE 30px, transparent 32px, transparent 36px, #E4E0CE 36px, transparent 38px, transparent 42px, #E4E0CE 42px, transparent 44px, transparent 48px, #E4E0CE 48px, transparent 50px);
+}
+
+/* .book-modal:before {
+    content: "";
+    position: absolute;
+    box-sizing: inherit;
+    height: 20px;
+    width: 160px;
+    right: 40px;
+    top: 72px;
+    background: #D11F2F;
+    border-radius: 20px;
+    box-shadow: 0px 36px #D11F2F;
+
+} */
+
+::backdrop {
+  background-color: #FFFFFF;
+  opacity: 0.35;
+}
+
+.book-inputs-container {
+    width: 100%;
+    height: 355px;
+    padding-left: 50px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttons-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding-bottom: 1rem;
+
+    input {
+        min-width: none;
+        padding: 0px 5px;
+    }
+}
+
+.read-radio-input {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding-top: 2rem;
+
+    input {
+        margin: 0px;
+        min-height: 20px;
+    }
+}
+
+.title-and-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#close-book {
+    cursor: pointer;
 }
