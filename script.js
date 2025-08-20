@@ -10,6 +10,7 @@ var unreadBookshelf = document.querySelector(".unread")
 var addBookButton = document.querySelector("#add-book-btn")
 var closeBookButton = document.querySelector("#close-book")
 var deleteBookButton = document.querySelector("#delete-book")
+var form = document.querySelector("form");
 const titleInput = document.querySelector('#title-input');
 const authorInput = document.querySelector('#author-input');
 const pagesInput = document.querySelector('#pages-input')
@@ -44,4 +45,8 @@ closeBookButton.addEventListener("click", (e) => {
 deleteBookButton.addEventListener("click", (e) => {
     e.preventDefault();
     deleteBook(e.target);
+})
+
+form.addEventListener('click', (e) => {
+    e.preventDefault();
 })
