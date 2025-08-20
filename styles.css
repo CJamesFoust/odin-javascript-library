@@ -112,13 +112,19 @@ input {
     outline: none;
 }
 
-button {
+.btn, button {
     min-height: 30px;
     border: 2px solid #e4c69d;
     border-radius: 5px;
     padding: 0.3rem 0.5rem;
     background: #f3d9b2;
     min-width: 78px;
+}
+
+#add-book-btn {
+    max-width: 80px;
+    display: flex;
+    justify-content: center;
 }
 
 button:hover {
@@ -178,20 +184,6 @@ button:hover {
     box-shadow: inset 4px 6px 0px 0px #E4E0CE;
     background-image: linear-gradient(to bottom, transparent 6px, #E4E0CE 8px, transparent 8px, transparent 12px, #E4E0CE 12px, transparent 14px, transparent 18px, #E4E0CE 18px, transparent 20px, transparent 24px, #E4E0CE 24px, transparent 26px, transparent 30px, #E4E0CE 30px, transparent 32px, transparent 36px, #E4E0CE 36px, transparent 38px, transparent 42px, #E4E0CE 42px, transparent 44px, transparent 48px, #E4E0CE 48px, transparent 50px);
 }
-
-/* .book-modal:before {
-    content: "";
-    position: absolute;
-    box-sizing: inherit;
-    height: 20px;
-    width: 160px;
-    right: 40px;
-    top: 72px;
-    background: #D11F2F;
-    border-radius: 20px;
-    box-shadow: 0px 36px #D11F2F;
-
-} */
 
 ::backdrop {
   background-color: #FFFFFF;
