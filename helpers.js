@@ -93,11 +93,11 @@ export function booksFromLocal() {
     let unreadShelf = document.querySelector(".unread");
     let books = []
 
-    if(!parsedReadBooks && !parsedUnreadBooks) {
+    if(parsedReadBooks === null && parsedUnreadBooks === null) {
         return;
-    } else if((parsedReadBooks == null || parsedReadBooks == "" || parsedReadBooks == []) && (parsedUnreadBooks != null && parsedUnreadBooks != "" && parsedUnreadBooks != [])) {
+    } else if((parsedReadBooks == null) && (parsedUnreadBooks != null && parsedUnreadBooks != "" && parsedUnreadBooks != [])) {
         books = parsedUnreadBooks;
-    } else if ((parsedUnreadBooks == null || parsedUnreadBooks == "" || parsedUnreadBooks == []) && (parsedReadBooks != null && parsedReadBooks != "" && parsedReadBooks != [])) {
+    } else if ((parsedUnreadBooks == null) && (parsedReadBooks != null && parsedReadBooks != "" && parsedReadBooks != [])) {
         books = parsedReadBooks;
     } else {
         books = parsedReadBooks.concat(parsedUnreadBooks);
@@ -111,16 +111,21 @@ export function booksFromLocal() {
 }
 
 export function deleteBookFromLocal(bookID, isRead) {
-    let bookRead = JSON.parse(isRead) ? 'ReadBooks' : 'UnreadBooks'
-    let lStorage = JSON.parse(localStorage.getItem(bookRead))
+    let bookRead = JSON.parse(isRead) ? 'ReadBooks' : 'UnreadBooks';
+    let lStorage = JSON.parse(localStorage.getItem(bookRead));
 
-    lStorage.splice(lStorage.findIndex(i => i.id === bookID), 1)
+    lStorage.splice(lStorage.findIndex(i => i.id === bookID), 1);
     localStorage.setItem(bookRead, JSON.stringify(lStorage));
 }
 
 export function setLocalStorage(shelf, item) {
-    let lStorage = JSON.parse(localStorage.getItem(shelf))
-    localStorage.setItem(shelf, JSON.stringify(lStorage.concat(item)))
+    let lStorage = JSON.parse(localStorage.getItem(shelf));
+    
+    if (lStorage !== null) {
+        localStorage.setItem(shelf, JSON.stringify(lStorage.concat(item)));
+    } else {
+        localStorage.setItem(shelf, JSON.stringify(item));
+    }
 }
 
 export function closeBook() {
