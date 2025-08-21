@@ -18,7 +18,6 @@ const colorInput = document.querySelector('#color-selector');
 
 addBookButton.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log('add button')
     let newBook = new Book(titleInput.value, authorInput.value, pagesInput.value, isReadInput.value, colorInput.value)
     addBookToLibrary(newBook);
 
@@ -31,8 +30,6 @@ addBookButton.addEventListener("click", (e) => {
         addBookToShelf(newBook, unreadBookshelf);
         setLocalStorage('UnreadBooks', newBook);
     }
-
-    console.log(newBook);
 
     resetFieldValues(titleInput, authorInput, pagesInput, isReadInput, colorInput);
 });

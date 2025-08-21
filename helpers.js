@@ -93,14 +93,14 @@ export function booksFromLocal() {
     let unreadShelf = document.querySelector(".unread");
     let books = []
 
-    if(parsedReadBooks === null && parsedUnreadBooks === null) {
+    if((parsedReadBooks === null || parsedReadBooks.length === 0) && (parsedUnreadBooks === null || parsedUnreadBooks.length === 0)) {
         return;
-    } else if((parsedReadBooks == null) && (parsedUnreadBooks != null && parsedUnreadBooks != "" && parsedUnreadBooks != [])) {
-        books = parsedUnreadBooks;
-    } else if ((parsedUnreadBooks == null) && (parsedReadBooks != null && parsedReadBooks != "" && parsedReadBooks != [])) {
-        books = parsedReadBooks;
+    } else if((parsedReadBooks === null || parsedReadBooks.length === 0) && (parsedUnreadBooks !== null && parsedUnreadBooks !== "" && parsedUnreadBooks.length !== 0)) {
+        books.push(parsedUnreadBooks);
+    } else if ((parsedUnreadBooks === null || parsedUnreadBooks.length === 0) && (parsedReadBooks !== null && parsedReadBooks !== "" && parsedReadBooks.length !== 0)) {
+        books.push(parsedReadBooks);
     } else {
-        books = parsedReadBooks.concat(parsedUnreadBooks);
+        books.push(parsedReadBooks.concat(parsedUnreadBooks));
     }
 
     books.map((book) => {
@@ -112,7 +112,8 @@ export function booksFromLocal() {
 
 export function deleteBookFromLocal(bookID, isRead) {
     let bookRead = JSON.parse(isRead) ? 'ReadBooks' : 'UnreadBooks';
-    let lStorage = JSON.parse(localStorage.getItem(bookRead));
+    let lStorage = [];
+    lStorage.push(JSON.parse(localStorage.getItem(bookRead)));
 
     lStorage.splice(lStorage.findIndex(i => i.id === bookID), 1);
     localStorage.setItem(bookRead, JSON.stringify(lStorage));
@@ -120,7 +121,7 @@ export function deleteBookFromLocal(bookID, isRead) {
 
 export function setLocalStorage(shelf, item) {
     let lStorage = JSON.parse(localStorage.getItem(shelf));
-    
+
     if (lStorage !== null) {
         localStorage.setItem(shelf, JSON.stringify(lStorage.concat(item)));
     } else {
