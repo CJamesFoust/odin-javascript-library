@@ -122,6 +122,10 @@ input {
     cursor: pointer;
 }
 
+input[type="button"] {
+    cursor: pointer;
+}
+
 #add-book-btn {
     max-width: 80px;
     display: flex;
