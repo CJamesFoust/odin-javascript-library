@@ -91,15 +91,17 @@ export function booksFromLocal() {
     let parsedReadBooks = JSON.parse(localStorage.getItem('ReadBooks'))
     let readShelf = document.querySelector(".read");
     let unreadShelf = document.querySelector(".unread");
+    let books = []
 
     if(!parsedReadBooks && !parsedUnreadBooks) {
         return;
+    } else if((parsedReadBooks == null || parsedReadBooks == "" || parsedReadBooks == []) && (parsedUnreadBooks != null && parsedUnreadBooks != "" && parsedUnreadBooks != [])) {
+        books = parsedUnreadBooks;
+    } else if ((parsedUnreadBooks == null || parsedUnreadBooks == "" || parsedUnreadBooks == []) && (parsedReadBooks != null && parsedReadBooks != "" && parsedReadBooks != [])) {
+        books = parsedReadBooks;
+    } else {
+        books = parsedReadBooks.concat(parsedUnreadBooks);
     }
-
-    let books = parsedReadBooks.concat(parsedUnreadBooks);
-
-
-
 
     books.map((book) => {
         let bookObject = new Book(book.title, book.author, book.numOfPages, book.isRead, book.color)
