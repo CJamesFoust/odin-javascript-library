@@ -87,11 +87,14 @@ export function resetFieldValues(titleInput, authorInput, pagesInput, isReadInpu
 }
 
 export function booksFromLocal() {
-    let parsedUnreadBooks = JSON.parse(localStorage.getItem('UnreadBooks'));
-    let parsedReadBooks = JSON.parse(localStorage.getItem('ReadBooks'))
+    let parsedReadBooks = [];
+    let parsedUnreadBooks = [];
+    let books = []
     let readShelf = document.querySelector(".read");
     let unreadShelf = document.querySelector(".unread");
-    let books = []
+    
+    parsedReadBooks.push(JSON.parse(localStorage.getItem('ReadBooks')));
+    parsedUnreadBooks.push(JSON.parse(localStorage.getItem('UnreadBooks')));
 
     if((parsedReadBooks === null || parsedReadBooks.length === 0) && (parsedUnreadBooks === null || parsedUnreadBooks.length === 0)) {
         return;
