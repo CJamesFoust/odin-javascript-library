@@ -220,3 +220,11 @@ button:hover {
 #close-book {
     cursor: pointer;
 }
+
+.book-modal * {
+    color: inherit;
+}
+
+.book-modal input {
+    color: #57361f;
+}

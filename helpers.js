@@ -145,6 +145,7 @@ export function openBook(book) {
     bookRead.checked = JSON.parse(currentBook.isRead) ? true : false;
     bookModal.style.backgroundColor = currentBook.color;
     bookModal.style.boxShadow = `2px 6px 40px 0px ${currentBook.color}`;
+    HEXToL(currentBook.color) >= 50 ? bookModal.style.color = "#000000" : bookModal.style.color = "#FFFFFF";
     bookModal.showModal();
 }
 
