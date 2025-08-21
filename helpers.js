@@ -68,7 +68,9 @@ export function addBookToLibrary(book) {
 }
 
 export function addBookToLocalLibrary(book) {
+    console.log(library)
     library.push(book);
+    console.log(library)
     localStorage.setItem('Books', JSON.stringify(library));
 }
 
@@ -140,7 +142,7 @@ export function openBook(book) {
 
     bookTitle.textContent = currentBook.title;
     bookAuthor.textContent = currentBook.author;
-    bookRead.checked = currentBook.isRead ? true : false;
+    bookRead.checked = JSON.parse(currentBook.isRead) ? true : false;
     bookModal.style.backgroundColor = currentBook.color;
     bookModal.style.boxShadow = `2px 6px 40px 0px ${currentBook.color}`;
     bookModal.showModal();
