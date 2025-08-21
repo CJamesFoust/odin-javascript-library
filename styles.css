@@ -1,14 +1,8 @@
-@font-face {
-    font-family: 'Bonobo';
-    src: url(./assets/Bonobo\ Bold.ttf);
-}
-
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Bonobo';
+    font-family: "Merriweather", serif;
     color: #57361f;
 }
 
@@ -71,23 +65,6 @@ body {
 
 .book:hover {
     transform: translateY(-5px);
-}
-
-/* Variations for book colors */
-.red {
-    background: #b22222;
-}
-
-.green {
-    background: #228b22;
-}
-
-.purple {
-    background: #6a5acd;
-}
-
-.orange {
-    background: #ff8c00;
 }
 
 .add-book {

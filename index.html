@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odin - Library</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+        rel="stylesheet">
     <script src="./script.js" type="module"></script>
 </head>
+
 <body>
     <div>
         <h1 id="page-title">BOOK NOOK</h1>
@@ -20,7 +27,7 @@
                     <input type="text" placeholder="Book author" id="author-input" required>
                 </div>
                 <div class="lower-inputs">
-                    <input type="text" placeholder="Book pages" id="pages-input"required>
+                    <input type="text" placeholder="Book pages" id="pages-input" required>
                     <select name="is-read" id="is-read">
                         <option value="false">Have Not Read</option>
                         <option value="true">Have Read</option>
@@ -39,27 +46,28 @@
         </div>
     </div>
     <div class="bookshelf">
-    <div class="shelf read">
-    </div>
-    <div class="shelf unread">
-    </div>
-  </div>
-  <dialog class="book-modal">
-    <div class="book-inputs-container">
-        <div class="title-and-author">
-            <h3 id="title">title of book</h3>
-            <h5 id="author">author of book</h5>
+        <div class="shelf read">
         </div>
-        <div class="read-radio-input">
-            <label for="radio-read">Read</label>
-            <input type="radio" name="read" id="radio-read">
-        </div>
-        <div class="buttons-container">
-            <input type="button" value="save" id="save-book">
-            <input type="button" value="remove" id="delete-book">
-            <input type="button" value="close" id="close-book">
+        <div class="shelf unread">
         </div>
     </div>
-  </dialog>
+    <dialog class="book-modal">
+        <div class="book-inputs-container">
+            <div class="title-and-author">
+                <h3 id="title">title of book</h3>
+                <h5 id="author">author of book</h5>
+            </div>
+            <div class="read-radio-input">
+                <label for="radio-read">Read</label>
+                <input type="checkbox" name="read" id="radio-read">
+            </div>
+            <div class="buttons-container">
+                <input type="button" value="save" id="save-book">
+                <input type="button" value="remove" id="delete-book">
+                <input type="button" value="close" id="close-book">
+            </div>
+        </div>
+    </dialog>
 </body>
+
 </html>
