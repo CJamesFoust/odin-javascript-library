@@ -228,3 +228,9 @@ button:hover {
 .book-modal input {
     color: #57361f;
 }
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: none;
+}

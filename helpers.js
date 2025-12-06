@@ -4,7 +4,7 @@ export var currentBook = {};
 
 const titleInput = document.querySelector('#title-input');
 const authorInput = document.querySelector('#author-input');
-const pagesInput = document.querySelector('#pages-input')
+const pagesInput = document.querySelector('#pages-input');
 const isReadInput = document.querySelector('#is-read');
 const colorInput = document.querySelector('#color-selector');
 const bookModal = document.querySelector("dialog");

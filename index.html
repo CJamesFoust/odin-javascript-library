@@ -1,73 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Odin - Library</title>
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      rel="stylesheet"
+    />
     <script src="./script.js" type="module"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div>
-        <h1 id="page-title">BOOK NOOK</h1>
+      <h1 id="page-title">BOOK NOOK</h1>
     </div>
     <div class="add-book">
-        <div>
-            <label>Add a book</label>
-            <div class="inputs">
-                <div class="upper-inputs">
-                    <input type="text" placeholder="Book title" id="title-input" required>
-                    <input type="text" placeholder="Book author" id="author-input" required>
-                </div>
-                <div class="lower-inputs">
-                    <input type="text" placeholder="Book pages" id="pages-input" required>
-                    <select name="is-read" id="is-read">
-                        <option value="false">Have Not Read</option>
-                        <option value="true">Have Read</option>
-                    </select>
-                </div>
-                <div class="color-add-button">
-                    <label for="color-selector">Book color</label>
-                    <div class="color-add-button-inputs">
-                        <input type="color" name="color-selector" id="color-selector">
-                    </div>
-                    <div class="button-container">
-                        <div class="btn" id="add-book-btn">Add</div>
-                    </div>
-                </div>
+      <div>
+        <label>Add a book</label>
+        <form class="inputs" novalidate>
+          <div class="upper-inputs">
+            <input
+              type="text"
+              placeholder="Book title"
+              id="title-input"
+              name="bookTitle"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Book author"
+              id="author-input"
+              name="bookAuthor"
+              required
+            />
+          </div>
+          <div class="lower-inputs">
+            <input
+              type="text"
+              placeholder="Book pages"
+              id="pages-input"
+              name="bookPages"
+              required
+            />
+            <select name="is-read" id="is-read">
+              <option value="false">Have Not Read</option>
+              <option value="true">Have Read</option>
+            </select>
+          </div>
+          <div class="color-add-button">
+            <label for="color-selector">Book color</label>
+            <div class="color-add-button-inputs">
+              <input type="color" name="color-selector" id="color-selector" />
             </div>
-        </div>
+            <div class="button-container">
+              <button class="btn disabled" id="add-book-btn">Add</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
     <div class="bookshelf">
-        <div class="shelf read">
-        </div>
-        <div class="shelf unread">
-        </div>
+      <div class="shelf read"></div>
+      <div class="shelf unread"></div>
     </div>
     <dialog class="book-modal">
-        <div class="book-inputs-container">
-            <div class="title-and-author">
-                <h3 id="title">title of book</h3>
-                <h5 id="author">author of book</h5>
-            </div>
-            <div class="read-radio-input">
-                <label for="radio-read">Read</label>
-                <input type="checkbox" name="read" id="radio-read">
-            </div>
-            <div class="buttons-container">
-                <input type="button" value="save" id="save-book">
-                <input type="button" value="remove" id="delete-book">
-                <input type="button" value="close" id="close-book">
-            </div>
+      <div class="book-inputs-container">
+        <div class="title-and-author">
+          <h3 id="title">title of book</h3>
+          <h5 id="author">author of book</h5>
         </div>
+        <div class="read-radio-input">
+          <label for="radio-read">Read</label>
+          <input type="checkbox" name="read" id="radio-read" />
+        </div>
+        <div class="buttons-container">
+          <input type="button" value="save" id="save-book" />
+          <input type="button" value="remove" id="delete-book" />
+          <input type="button" value="close" id="close-book" />
+        </div>
+      </div>
     </dialog>
-</body>
-
+  </body>
 </html>
