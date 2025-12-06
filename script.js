@@ -14,15 +14,7 @@ var authorValid = false;
 
 const checkValidation = (input, validState) => {
     input.reportValidity();
-
-    if(input.validity.valid) {
-        validState = true;
-    } else {
-        validState = false;
-    }
-
-    return validState;
-
+    return input.validity.valid ? validState = true : validState = false;
 }
 
 titleInput.addEventListener("input", () => {
